@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Mynerve&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sunshiney&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Peralta&display=swap" rel="stylesheet">
+
+<title>Activity 7</title>
+
+<link rel="icon" type="image/png" href="favicon.png">
+
+<style>
+
+/* ========================================= */
+/* GLOBAL */
+/* ========================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    overflow:hidden;
+    font-family:'Trebuchet MS', Arial, sans-serif;
+}
+
+.page{
+    display:none;
+    width:100%;
+    min-height:100vh;
+}
+
+.active-page{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* ========================================= */
+/* PAGE 1 LOGIN */
+/* ========================================= */
+
+#page1{
+    background-image: url("pink-flowers.gif");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.blog-card{
+    width:650px;
+    background:rgb(255, 79, 161, 0.5);
+    border:1px solid rgb(252, 252, 137);
+    border-radius:55px;
+    padding:30px;
+    position:relative;
+}
+
+.stars{
+    display:flex;
+    justify-content:center;
+    font-size:20px;
+    color:rgb(252, 252, 137);
+    margin-bottom:5px;
+    padding:5px;
+}
+
+.title{
+    font-weight:bold;
+    line-height:1;
+    color:rgb(252, 252, 137);
+    font-family:"Peralta", serif;
+}
+
+.small-text{
+    font-size:70px;
+    color:rgb(252, 252, 137);
+    text-shadow:4px 4px 0px black;
+}
+
+.big-text{
+    font-size:90px;
+    color:white;
+    -webkit-text-stroke:1px rgb(155,219,245);
+    text-shadow:4px 4px 0px black;
+}
+
+.content{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+}
+
+.image-box{
+    width:350px;
+    height:210px;
+    border:5px solid rgb(252,252,137);
+    padding:3px;
+    overflow:hidden;
+    background-image:url(bg-01.png);
+    background-size:cover;
+}
+
+.image-box img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.login-section{
+    width:100%;
+}
+
+.input-box{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:rgb(252,252,137);
+    padding:5px 15px;
+    margin-bottom:21px;
+    border:2px solid rgb(131,128,128);
+    box-shadow:2px 2px 0px black;
+}
+
+.input-box input{
+    border:none;
+    outline:none;
+    background:transparent;
+    width:100%;
+    font-size:15px;
+    font-family:"Mynerve", cursive;
+}
+
+.remember-forgot{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:20px;
+    font-size:15px;
+    color:#ad1a3a;
+}
+.remember-forgot label{
+    text-decoration:none;
+    color:#ad1a3a;
+    font-family:"Mynerve", cursive;
+}
+
+.remember-forgot a{
+    text-decoration:underline;
+    color:#ad1a3a;
+    font-weight:bold;
+    font-family:"Mynerve", cursive;
+}
+
+.btn{
+    width:100%;
+    padding:14px;
+    border:none;
+    cursor:pointer;
+    background:rgb(247,168,196);
+    color:#ad1a3a;
+    font-size:20px;
+    font-weight:bold;
+    font-family:"Mynerve", cursive;
+    border:1px solid #ad1a3a;
+    box-shadow:
+    inset 0 -2px 2px black,
+    inset 0 2px 2px white;
+    transition:0.1s;
+}
+
+.btn:hover{
+    transform:scale(1.03);
+    background:#f38db1;
+}
+
+/* ========================================= */
+/* PAGE 3 ACTIVITY 4 */
+/* ========================================= */
+
+#page3{
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    background-image:url("stars.gif");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+.player{
+    width:720px;
+    max-width:95%;
+    padding:30px;
+    border-radius:100px;
+    background-image:url("IMAGE6.gif");
+    background-size:cover;
+    background-position:center;
+    border:4px solid #ff9ec9;
+
+    display:flex;
+    align-items:center;
+    gap:30px;
+
+    box-shadow:
+    0 15px 35px rgba(255,105,180,0.35),
+    inset 0 2px 8px rgba(255,255,255,0.6);
+}
+
+.controls{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    background:linear-gradient(to bottom,#fff0f7,#ffb6d6);
+    border:6px solid #ffe6f2;
+
+    position:relative;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.small-btn{
+    position:absolute;
+    border:none;
+    background:none;
+    font-size:28px;
+    color:#ff4fa1;
+    cursor:pointer;
+}
+
+.plus{ top:6px; }
+.minus{ bottom:6px; }
+.prev{ left:8px; }
+.next{ right:7px; }
+
+.play-btn{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    border:none;
+    cursor:pointer;
+
+    background:linear-gradient(to bottom,#fff5fa,#fce2ee);
+
+    color:#ff4fa1;
+    font-size:34px;
+    font-weight:bold;
+}
+
+.screen{
+    flex:1;
+    padding:30px;
+    border-radius:60px;
+
+    background:linear-gradient(to bottom,#fff1f8,#ffcce5,#ff98cb);
+
+    box-shadow:
+    inset 4px 3px 20px rgb(255,255,255);
+}
+
+.song-title{
+    text-align:center;
+    font-size:42px;
+    color:#d63b84;
+}
+
+.artist{
+    text-align:center;
+    margin-top:3px;
+    color:#ff4fa1;
+}
+
+.now-playing{
+    text-align:center;
+    margin-top:20px;
+    letter-spacing:6px;
+    font-size:12px;
+    color:#ff4fa1;
+}
+
+.progress-container{
+    margin-top:35px;
+}
+
+.progress-bg{
+    width:100%;
+    height:14px;
+    background:#ffeaf4;
+    overflow:hidden;
+}
+
+.progress{
+    width:0%;
+    height:100%;
+    background:linear-gradient(to right,#ff62c0,#ff2d96);
+}
+
+.bottom-controls{
+    display:flex;
+    justify-content:space-between;
+    margin-top:10px;
+    color:#c92f7d;
+}
+
+.bottom-controls button{
+    border:none;
+    background:none;
+    font-size:30px;
+    color:#c92f7d;
+}
+
+.volume-container{
+    display:flex;
+    justify-content:center;
+    margin-top:10px;
+}
+
+#volumeSlider{
+    width:100%;
+}
+
+/* ========================================= */
+/* PAGE 4 ACTIVITY 3 */
+/* ========================================= */
+
+#page5{
+    justify-content:center;
+    align-items:center;
+
+    background-image:url("gif2.gif");
+    background-size:cover;
+    background-position:center;
+}
+
+.header{
+    text-align:center;
+}
+
+.header h1{
+    font-family:"Peralta", serif;
+    font-size:60px;
+    color:white;
+
+    -webkit-text-stroke:1px rgb(255,99,146);
+
+    text-shadow:1px 1px 9px rgb(252,249,65);
+}
+
+.three-space{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:40px;
+    margin:40px;
+}
+
+.two-space{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    margin:40px;
+}
+
+.Uber-button{
+    background:black;
+    color:white;
+    padding:14px 26px;
+}
+
+.Amazon-button{
+    background:rgb(255,216,20);
+    padding:12px 50px;
+    border-radius:25px;
+}
+
+.GitHub-button{
+    background:rgb(46,164,79);
+    color:white;
+    padding:12px 20px;
+    border-radius:6px;
+}
+
+.Bootstrap-get{
+    background:rgb(121,82,179);
+    color:white;
+    padding:12px 20px;
+    border-radius:6px;
+}
+
+.Bootstrap-download{
+    background:rgb(108,117,125);
+    color:white;
+    padding:12px 20px;
+    border-radius:5px;
+}
+
+.LinkedIn-apply{
+    background:rgb(10,102,194);
+    color:white;
+    padding:14px 30px;
+    border-radius:25px;
+}
+
+.LinkedIn-save{
+    background:white;
+    color:rgb(10,102,194);
+    border:2px solid rgb(10,102,194);
+    padding:12px 20px;
+    border-radius:25px;
+}
+
+/* ========================================= */
+/* PAGE 4 ACTIVITY 2 */
+/* ========================================= */
+
+#page4{
+    justify-content:center;
+    align-items:center;
+
+    background-image:url("killthemwithcuteness.gif");
+    background-size:cover;
+    background-position:center;
+}
+
+/* ========================================= */
+/* PAGE 2 ACTIVITY 5 */
+/* ========================================= */
+
+#page2{
+    justify-content:center;
+    align-items:center;
+
+    background-image:url("star-background.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    padding:20px;
+}
+
+.activity5-box{
+    width:95%;
+    max-width:1800px;
+    background:#f8dce2;
+    border:3px solid #000000;
+    overflow:hidden;
+}
+
+.activity5-nav{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:40px;
+    padding:15px;
+
+    background-image:url("BANNER.gif");
+    background-position:center;
+
+    border-bottom:3px solid black;
+}
+
+.activity5-nav a{
+    text-decoration:none;
+    color:#ad1a3a;
+
+    font-weight:900;
+    font-size:15px;
+
+    font-family:"Mynerve", cursive;
+
+    background:rgb(247,168,196);
+
+    padding:5px 10px 4px;
+
+    border:1px solid #ad1a3a;
+
+    box-shadow:
+    inset 0 -2px 2px black,
+    inset 0 2px 2px white;
+}
+
+.activity5-nav a:hover{
+    transform:scale(1.08);
+    background:#f38db1;
+}
+
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:50px;
+    gap:50px;
+    flex-wrap:wrap;
+
+    background-image:url("background-act5.jpg");
+    background-size:cover;
+    background-position:center;
+}
+
+.left{
+    flex:1;
+    min-width:280px;
+    position:relative;
+}
+
+.left h1{
+    font-family:"Peralta", serif;
+    font-size:clamp(35px, 6vw, 60px);
+    line-height:1;
+    letter-spacing:4px;
+    color:#ff4d7d;
+    text-shadow:2px 2px 0px black;
+    margin-bottom:30px;
+}
+
+.left h1 span{
+    color:#ff4d7d;
+    text-shadow:
+    2px 2px 1px black,
+    0px 0px 20px #ff4d7d;
+}
+
+.arc-text{
+    position:absolute;
+    top:-8%;
+    left:25%;
+
+    width:250px;
+
+    color:#8d3cff;
+
+    font-size:clamp(12px, 2vw, 20px);
+
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+    font-weight:bold;
+}
+
+.arc-text span{
+    position:absolute;
+    left:50%;
+    bottom:0;
+    transform-origin:0 140px;
+    transform:rotate(calc(var(--i) * 6deg - 30deg));
+}
+
+.left p{
+    color:#ff4d7d;
+    margin-bottom:25px;
+    font-family:"Mynerve", cursive;
+    font-weight:bold;
+    font-size:18px;
+}
+
+.btn-group{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.btn-group button{
+    background:linear-gradient(rgb(247,168,196));
+    color:#ad1a3a;
+    border:1px solid #ff4d7d;
+    padding:10px;
+
+    font-family:"Mynerve", cursive;
+    font-weight:600;
+    cursor:pointer;
+
+    box-shadow:
+    inset 0 -2px 2px black,
+    inset 0 2px 2px white;
+}
+
+.btn-group button:hover{
+    transform:scale(1.08);
+    background:#f38db1;
+}
+
+.right-grid{
+    flex:1;
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit, minmax(140px, 1fr));
+
+    gap:18px;
+
+    min-width:280px;
+}
+
+.right-grid img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+
+    box-shadow:5px 5px 3px #ad1a3a;
+}
+
+/* ========================================= */
+/* PAGINATION */
+/* ========================================= */
+
+.container{
+    position:fixed;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+
+    background:rgba(255,255,255,0.1);
+
+    backdrop-filter:blur(10px);
+
+    padding:10px 90px;
+
+    border-radius:15px;
+
+    box-shadow:0 10px 30px rgba(255,105,180,0.3);
+}
+
+.pagination{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+}
+
+.pagination button{
+    border:none;
+    padding:12px 16px;
+    cursor:pointer;
+    font-weight:bold;
+
+    background:linear-gradient(145deg,#ffffff,#f84291);
+
+    color:white;
+
+    box-shadow:0 5px 10px rgba(255,79,155,0.3);
+}
+
+.pagination button:hover{
+    transform:scale(1.1);
+    background:#f38db1;
+}
+
+.pagination .active{
+    background:#ffc0dc;
+    color:#ff4f9b;
+    border:1px solid #ff4f9b;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- PAGE 1 LOGIN -->
+
+<div id="page1" class="page active-page">
+
+    <div class="blog-card">
+
+        <div class="stars">
+            ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆ ☆
+        </div>
+
+        <div class="title">
+            <span class="small-text">Welcome to My</span><br>
+            <span class="big-text">BLOG! ✮⋆˙⸝⸝</span>
+        </div>
+
+        <div class="content">
+
+            <div class="image-box">
+                <img src="CHARACTER-01.png">
+            </div>
+
+<form class="login-section" action="ACTIVITY5.html">
+
+                    <div class="input-box">
+                        <input type="text" placeholder="Username" required>
+                        <img src="envelope-01.png" width="20">
+                    </div>
+
+                    <div class="input-box">
+                        <input type="password" placeholder="Password" required>
+                        <img src="lock-01.png" width="20">
+                    </div>
+
+                    <div class="remember-forgot">
+                        <label>
+                            <input type="checkbox">
+                            Remember me
+                        </label>
+
+                        <a href="#">Forgot Password?</a>
+                    </div>
+            
+                    <button type="button" class="btn" onclick="showPage(2)">
+                        Login
+                    </button>
+                
+
+
+
+                </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- PAGE 2 ACTIVITY 5 -->
+<div id="page2" class="page">
+
+<div class="activity5-box">
+
+    <nav class="activity5-nav">
+        <a href="#">HOME</a>
+        <a href="#">COFFEE</a>
+        <a href="#">MUSIC</a>
+        <a href="#">ACTIVITIES</a>
+    </nav>
+
+    <section class="hero">
+
+        <div class="left">
+
+            <h1>
+                AH YES,<br>
+                ANOTHER <br>
+                <span>BORING DAY.</span>
+            </h1>
+
+            <div class="arc-text">
+
+                <span style="--i:0">C</span>
+                <span style="--i:1">E</span>
+                <span style="--i:2">R</span>
+                <span style="--i:3">T</span>
+                <span style="--i:4">I</span>
+                <span style="--i:5">F</span>
+                <span style="--i:6">I</span>
+                <span style="--i:7">E</span>
+                <span style="--i:8">D</span>
+                <span style="--i:9"> </span>
+                <span style="--i:10">T</span>
+                <span style="--i:11">A</span>
+                <span style="--i:12">P</span>
+                <span style="--i:13">U</span>
+                <span style="--i:14">L</span>
+                <span style="--i:15">A</span>
+                <span style="--i:16">N</span>
+
+            </div>
+
+            <p>
+                TO MAKE IT BETTER, WHY DON'T YOU...
+            </p>
+
+            <div class="btn-group">
+                <button>☕ HAVE COFFEE</button>
+                    <button onclick="showPage(3)">🎶 LISTEN TO MUSIC</button>
+                    <button onclick="showPage(4)">💥 EXPLORE ACTIVITIES</button>
+            </div>
+
+        </div>
+
+        <div class="right-grid">
+
+            <img src="IMAGE1.jpg">
+            <img src="IMAGE2.jpg">
+            <img src="IMAGE3.jpg">
+            <img src="GIFIMAGE4.gif">
+            <img src="IMAGE5.gif">
+            <img src="IMAGE6.gif">
+
+        </div>
+
+    </section>
+
+</div>
+
+</div>
+
+<!-- PAGE 3 ACTIVITY 4 -->
+<div id="page3" class="page">
+
+<div class="player">
+
+    <div class="controls">
+
+        <button class="small-btn plus">+</button>
+        <button class="small-btn minus">−</button>
+        <button class="small-btn prev">⏮</button>
+        <button class="small-btn next">⏭</button>
+
+        <button class="play-btn" id="playButton">
+            ▶
+        </button>
+
+    </div>
+
+    <div class="screen">
+
+        <h1 class="song-title">
+            Still Love You
+        </h1>
+
+        <p class="artist">
+            The Two Lips
+        </p>
+
+        <p class="now-playing">
+            NOW PLAYING
+        </p>
+
+        <div class="progress-container">
+
+            <div class="progress-bg">
+                <div class="progress"></div>
+            </div>
+
+            <div class="bottom-controls">
+                <button>⇄</button>
+                <span>0:00</span>
+                <button>↺</button>
+            </div>
+
+            <div class="volume-container">
+
+                <input
+                type="range"
+                id="volumeSlider"
+                min="0"
+                max="1"
+                step="0.01"
+                value="1">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+<!-- PAGE 4 ACTIVITY 2 -->
+
+<div id="page4" class="page">
+
+<div class="header">
+
+<h1>
+₊✩‧₊˚౨ৎ˚₊✩‧₊ ACTIVITY 2 ₊✩‧₊˚౨ৎ˚₊✩‧₊
+</h1>
+
+<div class="three-space">
+
+<div>
+<h3>2a. Uber</h3>
+<button class="Uber-button">Request now</button>
+</div>
+
+<div>
+<h3>2b. Amazon</h3>
+<button class="Amazon-button">Add to Cart</button>
+</div>
+
+<div>
+<h3>2c. GitHub</h3>
+<button class="GitHub-button">Sign up</button>
+</div>
+
+</div>
+
+<div class="two-space">
+
+<div>
+<h3>2d. Bootstrap</h3>
+
+<button class="Bootstrap-get">
+Get started
+</button>
+
+<button class="Bootstrap-download">
+Download
+</button>
+
+</div>
+
+<div>
+
+<h3>2e. LinkedIn</h3>
+
+<button class="LinkedIn-apply">
+Apply on company website
+</button>
+
+<button class="LinkedIn-save">
+Save
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- PAGE 5 ACTIVITY 3 -->
+
+<div id="page5" class="page">
+
+<div class="header">
+
+<h1>
+✮ ⋆ ˚｡𖦹 ⋆｡°✩ ACTIVITY 3 ✮ ⋆ ˚｡𖦹 ⋆｡°✩
+</h1>
+
+<div class="three-space">
+
+<div>
+<h3>2a. Uber</h3>
+<button class="Uber-button">Request now</button>
+</div>
+
+<div>
+<h3>2b. Amazon</h3>
+<button class="Amazon-button">Add to Cart</button>
+</div>
+
+<div>
+<h3>2c. GitHub</h3>
+<button class="GitHub-button">Sign up</button>
+</div>
+
+</div>
+
+<div class="two-space">
+
+<div>
+<h3>2d. Bootstrap</h3>
+
+<button class="Bootstrap-get">
+Get started
+</button>
+
+<button class="Bootstrap-download">
+Download
+</button>
+
+</div>
+
+<div>
+
+<h3>2e. LinkedIn</h3>
+
+<button class="LinkedIn-apply">
+Apply on company website
+</button>
+
+<button class="LinkedIn-save">
+Save
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- PAGINATION -->
+
+<div class="container" id="paginationContainer">
+
+<div class="pagination">
+
+<button onclick="changePage(-1)">‹</button>
+
+<div id="pageNumbers"></div>
+
+<button onclick="changePage(1)">›</button>
+
+</div>
+
+</div>
+
+<!-- AUDIO -->
+
+<audio id="audio">
+    <source src="still-love-you.mp3" type="audio/mpeg">
+</audio>
+
+<!-- JAVASCRIPT -->
+
+<script>
+
+let currentPage = 1;
+const totalPages = 5;
+
+/* ========================================= */
+/* PAGE NAVIGATION */
+/* ========================================= */
+
+function showPage(pageNumber){
+
+    document.querySelectorAll(".page").forEach(page => {
+        page.style.display = "none";
+    });
+
+    document.getElementById("page" + pageNumber).style.display = "flex";
+
+    currentPage = pageNumber;
+
+    updatePagination();
+
+    const pagination =
+    document.getElementById("paginationContainer");
+
+    /* HIDE PAGINATION ON PAGE 1 AND PAGE 2 */
+
+    if(pageNumber === 1 || pageNumber === 2){
+
+        pagination.style.display = "none";
+
+    }
+    else{
+
+        pagination.style.display = "block";
+
+    }
+}
+
+function changePage(direction){
+
+    currentPage += direction;
+
+    if(currentPage < 2){
+        currentPage = 2;
+    }
+
+    if(currentPage > totalPages){
+        currentPage = totalPages;
+    }
+
+    showPage(currentPage);
+}
+
+function updatePagination(){
+
+    const pageNumbers =
+    document.getElementById("pageNumbers");
+
+    pageNumbers.innerHTML = "";
+
+    for(let i = 2; i <= totalPages; i++){
+
+        const button =
+        document.createElement("button");
+
+        button.innerText = i;
+
+        if(i === currentPage){
+            button.classList.add("active");
+        }
+
+        button.onclick = function(){
+            showPage(i);
+        };
+
+        pageNumbers.appendChild(button);
+    }
+}
+
+/* ========================================= */
+/* AUDIO PLAYER */
+/* ========================================= */
+
+const audio =
+document.getElementById("audio");
+
+const playButton =
+document.getElementById("playButton");
+
+const volumeSlider =
+document.getElementById("volumeSlider");
+
+let isPlaying = false;
+
+/* PLAY / PAUSE */
+
+playButton.addEventListener("click", () => {
+
+    if(isPlaying){
+
+        audio.pause();
+
+        playButton.innerHTML = "▶";
+
+    }
+    else{
+
+        audio.play();
+
+        playButton.innerHTML = "❚❚";
+
+    }
+
+    isPlaying = !isPlaying;
+
+});
+
+/* VOLUME CONTROL */
+
+volumeSlider.addEventListener("input", () => {
+
+    audio.volume = volumeSlider.value;
+
+});
+
+
+
+audio.addEventListener("ended", () => {
+
+    playButton.innerHTML = "▶";
+
+    isPlaying = false;
+
+});
+
+
+
+showPage(1);
+
+</script>
+
+</body>
+</html>
