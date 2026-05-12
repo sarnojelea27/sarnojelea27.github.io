@@ -16,9 +16,6 @@
 
 <style>
 
-/* ========================================= */
-/* GLOBAL */
-/* ========================================= */
 
 *{
     margin:0;
@@ -43,10 +40,8 @@ body{
     align-items:center;
 }
 
-/* ========================================= */
+    
 /* PAGE 1 LOGIN */
-/* ========================================= */
-
 #page1{
     background-image: url("pink-flowers.gif");
     background-size: cover;
@@ -105,7 +100,7 @@ body{
     border:5px solid rgb(252,252,137);
     padding:3px;
     overflow:hidden;
-    background-image:url(bg-01.png);
+    background-image:url("bg01.png");
     background-size:cover;
 }
 
@@ -181,10 +176,7 @@ body{
     background:#f38db1;
 }
 
-/* ========================================= */
 /* PAGE 3 ACTIVITY 4 */
-/* ========================================= */
-
 #page3{
     flex-direction:column;
     justify-content:center;
@@ -329,10 +321,7 @@ body{
     width:100%;
 }
 
-/* ========================================= */
 /* PAGE 4 ACTIVITY 3 */
-/* ========================================= */
-
 #page5{
     justify-content:center;
     align-items:center;
@@ -418,10 +407,8 @@ body{
     border-radius:25px;
 }
 
-/* ========================================= */
-/* PAGE 4 ACTIVITY 2 */
-/* ========================================= */
 
+/* PAGE 4 ACTIVITY 2 */
 #page4{
     justify-content:center;
     align-items:center;
@@ -431,10 +418,8 @@ body{
     background-position:center;
 }
 
-/* ========================================= */
-/* PAGE 2 ACTIVITY 5 */
-/* ========================================= */
 
+/* PAGE 2 ACTIVITY 5 */
 #page2{
     justify-content:center;
     align-items:center;
@@ -609,10 +594,7 @@ body{
     box-shadow:5px 5px 3px #ad1a3a;
 }
 
-/* ========================================= */
 /* PAGINATION */
-/* ========================================= */
-
 .container{
     position:fixed;
     bottom:20px;
@@ -713,9 +695,6 @@ body{
                         Login
                     </button>
                 
-
-
-
                 </form>
 
         </div>
@@ -862,7 +841,6 @@ body{
 </div>
 
 <!-- PAGE 4 ACTIVITY 2 -->
-
 <div id="page4" class="page">
 
 <div class="header">
@@ -926,7 +904,6 @@ Save
 </div>
 
 <!-- PAGE 5 ACTIVITY 3 -->
-
 <div id="page5" class="page">
 
 <div class="header">
@@ -989,10 +966,7 @@ Save
 
 </div>
 
-
-
 <!-- PAGINATION -->
-
 <div class="container" id="paginationContainer">
 
 <div class="pagination">
@@ -1008,22 +982,18 @@ Save
 </div>
 
 <!-- AUDIO -->
-
 <audio id="audio">
     <source src="still-love-you.mp3" type="audio/mpeg">
 </audio>
 
 <!-- JAVASCRIPT -->
-
 <script>
 
 let currentPage = 1;
 const totalPages = 5;
 
-/* ========================================= */
-/* PAGE NAVIGATION */
-/* ========================================= */
 
+/* PAGE NAVIGATION */
 function showPage(pageNumber){
 
     document.querySelectorAll(".page").forEach(page => {
@@ -1101,10 +1071,7 @@ function updatePagination(){
 
 }
 
-/* ========================================= */
 /* AUDIO PLAYER */
-/* ========================================= */
-
 const audio =
 document.getElementById("audio");
 
@@ -1140,15 +1107,11 @@ playButton.addEventListener("click", () => {
 });
 
 /* VOLUME CONTROL */
-
 volumeSlider.addEventListener("input", () => {
 
     audio.volume = volumeSlider.value;
 
 });
-
-
-
 audio.addEventListener("ended", () => {
 
     playButton.innerHTML = "▶";
@@ -1156,8 +1119,6 @@ audio.addEventListener("ended", () => {
     isPlaying = false;
 
 });
-
-
 
 showPage(1);
 
