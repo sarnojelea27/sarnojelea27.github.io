@@ -810,13 +810,13 @@ body{
 
         <div class="progress-container">
 
-            <div class="progress-bg">
-                <div class="progress"></div>
+            <div class="progress-bg" id="progressBg">
+                <div class="progress" id="progress"></div>
             </div>
-
+            
             <div class="bottom-controls">
                 <button>⇄</button>
-                <span>0:00</span>
+                <span id="time">0:00</span>
                 <button>↺</button>
             </div>
 
@@ -1107,16 +1107,59 @@ playButton.addEventListener("click", () => {
 });
 
 /* VOLUME CONTROL */
-volumeSlider.addEventListener("input", () => {
+const progress =
+document.getElementById("progress");
 
-    audio.volume = volumeSlider.value;
+const progressBg =
+document.getElementById("progressBg");
+
+const time =
+document.getElementById("time");
+
+/* UPDATE PROGRESS BAR */
+audio.addEventListener("timeupdate", () => {
+
+    const current =
+    audio.currentTime;
+
+    const duration =
+    audio.duration;
+
+    /* UPDATE BAR */
+    const progressPercent =
+    (current / duration) * 100;
+
+    progress.style.width =
+    progressPercent + "%";
+
+    /* UPDATE TIME */
+    const minutes =
+    Math.floor(current / 60);
+
+    const seconds =
+    Math.floor(current % 60)
+    .toString()
+    .padStart(2, "0");
+
+    time.innerText =
+    `${minutes}:${seconds}`;
 
 });
-audio.addEventListener("ended", () => {
 
-    playButton.innerHTML = "▶";
+/* CLICK PROGRESS BAR TO SEEK */
+progressBg.addEventListener("click", (e) => {
 
-    isPlaying = false;
+    const width =
+    progressBg.clientWidth;
+
+    const clickX =
+    e.offsetX;
+
+    const duration =
+    audio.duration;
+
+    audio.currentTime =
+    (clickX / width) * duration;
 
 });
 
