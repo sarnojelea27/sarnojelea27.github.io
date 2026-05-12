@@ -1081,11 +1081,25 @@ document.getElementById("playButton");
 const volumeSlider =
 document.getElementById("volumeSlider");
 
+const progress =
+document.getElementById("progress");
+
+const progressBg =
+document.getElementById("progressBg");
+
+const time =
+document.getElementById("time");
+
 let isPlaying = false;
 
-/* PLAY / PAUSE */
 
-playButton.addEventListener("click", () => {
+audio.addEventListener("loadedmetadata", () => {
+
+    time.innerText = "0:00";
+
+});
+
+playButton.addEventListener("click", async () => {
 
     if(isPlaying){
 
@@ -1096,7 +1110,7 @@ playButton.addEventListener("click", () => {
     }
     else{
 
-        audio.play();
+        await audio.play();
 
         playButton.innerHTML = "❚❚";
 
@@ -1106,18 +1120,10 @@ playButton.addEventListener("click", () => {
 
 });
 
-/* VOLUME CONTROL */
-const progress =
-document.getElementById("progress");
 
-const progressBg =
-document.getElementById("progressBg");
-
-const time =
-document.getElementById("time");
-
-/* UPDATE PROGRESS BAR */
 audio.addEventListener("timeupdate", () => {
+
+    if(!audio.duration) return;
 
     const current =
     audio.currentTime;
@@ -1125,14 +1131,14 @@ audio.addEventListener("timeupdate", () => {
     const duration =
     audio.duration;
 
-    /* UPDATE BAR */
-    const progressPercent =
+
+    const percent =
     (current / duration) * 100;
 
     progress.style.width =
-    progressPercent + "%";
+    percent + "%";
 
-    /* UPDATE TIME */
+
     const minutes =
     Math.floor(current / 60);
 
@@ -1146,8 +1152,10 @@ audio.addEventListener("timeupdate", () => {
 
 });
 
-/* CLICK PROGRESS BAR TO SEEK */
+
 progressBg.addEventListener("click", (e) => {
+
+    if(!audio.duration) return;
 
     const width =
     progressBg.clientWidth;
@@ -1155,11 +1163,25 @@ progressBg.addEventListener("click", (e) => {
     const clickX =
     e.offsetX;
 
-    const duration =
-    audio.duration;
-
     audio.currentTime =
-    (clickX / width) * duration;
+    (clickX / width) * audio.duration;
+
+});
+
+
+volumeSlider.addEventListener("input", () => {
+
+    audio.volume =
+    volumeSlider.value;
+
+});
+
+
+audio.addEventListener("ended", () => {
+
+    playButton.innerHTML = "▶";
+
+    isPlaying = false;
 
 });
 
