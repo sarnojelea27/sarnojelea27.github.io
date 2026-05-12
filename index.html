@@ -190,7 +190,7 @@ body{
     justify-content:center;
     align-items:center;
 
-    background-image:url("stars.gif");
+    background-image:url("musicalflower.jpg");
     background-size:cover;
     background-position:center;
     background-repeat:no-repeat;
@@ -688,7 +688,7 @@ body{
                 <img src="chrtr1.png">
             </div>
 
-<form class="login-section" action="ACTIVITY5.html">
+<form class="login-section" onsubmit="login(event)">
 
                     <div class="input-box">
                         <input type="text" placeholder="Username" required>
@@ -709,7 +709,7 @@ body{
                         <a href="#">Forgot Password?</a>
                     </div>
             
-                    <button type="button" class="btn" onclick="showPage(2)">
+                    <button type="submit" class="btn">
                         Login
                     </button>
                 
@@ -1092,6 +1092,13 @@ function updatePagination(){
 
         pageNumbers.appendChild(button);
     }
+}
+    function login(event){
+
+    event.preventDefault();
+
+    showPage(2);
+
 }
 
 /* ========================================= */
