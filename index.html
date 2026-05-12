@@ -681,6 +681,7 @@ body{
         flex-direction:column;
         text-align:center;
         padding:20px;
+        gap:30px;
     }
 
     .container{
@@ -689,7 +690,7 @@ body{
     }
 
     h1{
-        font-size:35px !important;
+        font-size:35px;
     }
 
     .big-text{
@@ -699,7 +700,57 @@ body{
     .small-text{
         font-size:40px;
     }
+     .left{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+    }
 
+    .arc-text{
+        position:static;
+        width:auto;
+        margin-bottom:20px;
+        margin-top:-10px;
+        transform:none;
+    }
+
+    .arc-text span{
+        position:static;
+        transform:none;
+        display:inline-block;
+    }
+
+    .left h1{
+        margin-top:10px;
+    }
+
+    .btn-group{
+        justify-content:center;
+        flex-wrap:wrap;
+    }
+
+    .right-grid{
+        width:100%;
+    }
+
+    .right-grid img{
+        height:140px;
+    }
+
+    .pagination{
+        flex-direction:row !important;
+        flex-wrap:nowrap;
+    }
+        
+    .pagination button{
+        display:inline-block;
+        }
+        
+    #pageNumbers{
+        display:flex;
+        flex-direction:row;
+        gap:10px;
+    }
 }
 
 </style>
